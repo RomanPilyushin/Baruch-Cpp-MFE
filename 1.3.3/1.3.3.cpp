@@ -1,20 +1,32 @@
-// 1.3.3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+//Exercise1.3.3.cpp
+//Instructed to predict what will be printed on screen, with comments 
+//stating the output for each line.
 
-#include <iostream>
+
+
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int x = 0;
+
+	//(-3) + 20 - 6 = 11
+	x = -3 + 4 * 5 - 6;
+	printf("x = %d\n", x);
+
+	//(3 + 4) - 6 = 1
+	x = 3 + 4 % 5 - 6;
+	printf("x = %d\n", x);
+
+	//(-12 % -6) / 5 = 0 / 5 = 0
+	x = -3 * 4 % -6 / 5;
+	printf("x = %d\n", x);
+
+	//(13 % 5) / 2 = 1.5
+	x = (7 + 6) % 5 / 2;
+	printf("x = %d\n", x);
+
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

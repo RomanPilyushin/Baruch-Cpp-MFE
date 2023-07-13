@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1.3 - C Variables.cpp">
+    <ClCompile Include="TestVariables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

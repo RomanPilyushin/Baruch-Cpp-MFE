@@ -1,20 +1,46 @@
-// 1.5.1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Exercise1.5.1.cpp
+//Basic C program that calls a function minus(). 
+//This function receives two arguments and returns the difference(regular subtraction, not absolute).
+//This difference should be printed on screen.
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
+
+//function declaration
+//Simple subtraction function
+//num1 and num2 are int inputs into function
+//return difference of two input params
+//int minus(int num1, int num2);
+
+//Function minus
+//Returns difference of num1 and num2
+int minus(int num1, int num2)
+{
+	return num1 - num2;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int result = 0; //result variable init
+	
+	int a = 10;  //first input variable
+	int b = 2;  //second input variable
+
+	//display output
+	printf("%i minus %i equals: %i \n", a, b, minus(a, b));
+
+	//reset variables and display output
+	a = -8;
+	b = -6;
+	printf("%i minus %i equals: %i \n", a, b, minus(a, b));
+
+	//reset variables and display output
+	a = 8;
+	b = -10;
+	printf("%i minus %i equals: %i \n", a, b, minus(a, b));
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

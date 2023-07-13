@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1.4.6.cpp">
+    <ClCompile Include="freq.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

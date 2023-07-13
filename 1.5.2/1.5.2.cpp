@@ -1,20 +1,47 @@
-// 1.5.2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Exercise1.5.2.cpp
+//Basic C program that prints the factorials of a number.
+//Example -- 6!(six factorial) is the same as 6 * 5 * 4 * 3 * 2 * 1
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
+
+//function declaration
+//Simple recursive function
+//integer is input into recursive function for factorial
+//return number from recursive function call
+//int recursion(unsigned int num);
+
+int recursion(unsigned int i)
+{
+	if (i == 0) 
+	{
+		printf("%i\n", i);
+		return 1;
+	}
+	else if (i == 1) 
+	{
+		printf("%i\n", i);
+		return 1;
+	}
+	else 
+	{
+		printf("%i * ", i);
+		return recursion(i - 1);
+	}
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int num = 6;  //use this as starting point for recursion
+
+	printf("%i! is the same as ", num);  //print output
+	recursion(num);  //call recursion function
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+//Simple recursive function
+//integer is input into recursive function for factorial
+//returns number from recursive function call and also prints each number in the factorial

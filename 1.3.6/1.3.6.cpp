@@ -1,20 +1,38 @@
-// 1.3.6.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.3.6.cpp
+//Basic C program that shifts any number two places to the right. Input should be an integer
+//
 //
 
-#include <iostream>
+//Need to use _CRT_SECURE_NO_WARNINGS to avoid compilation errors. Seems that scanf is now deprecated??
+#define _CRT_SECURE_NO_WARNINGS
+
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int num = 0;  //input used for shifting
+
+	//prompt user to enter number and capture it
+	printf("Enter a number: ");
+	scanf("%d", &num);
+
+	//shift number two places to right
+	num = num >> 2;
+
+	//Output should be the shifted result
+	printf("The number shifted two places to the right is: %d \n", num);
+
+	//output an indication of whether a logical or arithmetic shift is performed 
+	//(if a 1 or 0 is shifted in at the left side) for the inputted number
+	if (num < 0) 
+	{
+		printf("Input number was negative; arithmetic shift; 1 shifted in at left side.\n");
+	}
+	else 
+	{
+		printf("Input number was positive; logical shift; 0 shifted in at left side.\n");
+	}
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

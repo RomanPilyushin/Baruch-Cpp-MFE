@@ -1,20 +1,43 @@
-// 1.4.4.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Exercise1.4.4.cpp
+// Basic C program that that prints two columns on the screen with the temperature in degrees Fahrenheit 
+// and the equivalent temperature in degrees Celsius.
+//
 //
 
-#include <iostream>
+//Need to use _CRT_SECURE_NO_WARNINGS to avoid compilation errors. Seems that scanf is now deprecated.
+#define _CRT_SECURE_NO_WARNINGS
+
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//input variables
+	int degree_step = 0;  //degree step initialized
+	int start_f = 0;       //start fahrenheit
+	int end_f = 0;         //ending fahrenheit
+	int current_f = 0;     //current fahrenheit
+	double celsius = 0.0;  //celsius variable initialized
+
+	printf("Enter the start temp in Fahrenheit: ");  //prompt user to enter start temp in fahrenheit
+	scanf("%i", &start_f);
+
+	printf("Enter the end temp in Fahrenheit: ");  //prompt user to enter end temp in fahrenheit
+	scanf("%i", &end_f);
+
+	printf("Enter the step size: ");  //prompt user to enter degree step 
+	scanf("%i", &degree_step);
+
+	//The left column shows the temperature in Fahrenheit. The right column shows the temperature in Celsius.
+	printf("Fahrenheit\tCelsius\n");
+
+	while (start_f <= end_f) //loop until start fahrenheit is same or greater than end fahrenheit
+	{  
+		celsius = (((double)5) / 9) * (current_f - 32); //calc celcius
+		printf("%i\t%10.1f \n", current_f, celsius);  //print current fahrenheit and celsius
+
+		current_f += degree_step; //update fahrenheit temp
+		start_f += degree_step;  //update starting fahrenheit temp
+	}
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

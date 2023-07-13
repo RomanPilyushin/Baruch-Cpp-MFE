@@ -1,20 +1,26 @@
-// 1.4.5.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Exercise1.4.5.cpp
+//Basic C program  that prints two columns on the screen with the temperature in degrees Celsius in the left column and degrees Fahrenheit in the right column.
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	double current_f = 0;  //current fahrenheit initialized
+
+	printf("Celsius\t\tFahrenheit\n"); //print a header text
+
+	//Start with 0 degrees Celsius and proceed until 19 degrees Celsius.
+	//Take steps of 1 degree.
+	for (int i = 0; i <= 19; i++) 
+	{
+		
+		current_f = (i * (((double)9) / 5)) + 32;  //calc current fahrenheit
+		
+		printf("%i\t%10.1f \n", i, current_f); //Print degrees Fahrenheit with 1 position after the comma.
+	
+	}
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

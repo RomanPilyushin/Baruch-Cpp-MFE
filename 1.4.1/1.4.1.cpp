@@ -1,20 +1,50 @@
-// 1.4.1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.4.1.cpp
+//Basic C program that asks for text input from the keyboard. 
+//The output of this program should be the amount of characters, the amount of words and the amount of newlines that have been typed. 
+//Multiple consecutive spaces should not be counted as multiple words.
+//
 //
 
-#include <iostream>
+
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
+#include <ctype.h>          //This include file declares the narrow character (char) classification functionality.
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int c = 0;  //characters entered by user
+	int prev_char = 0;  //previous character entered by user
+	int count_chars = 0;  //count of characters
+	int count_words = 0;  //count of words
+	int count_newlines = 0;  //count of newlines
+
+	//prompt user to enter text
+	printf("Enter some text at the prompt:");
+
+
+	//reading of characters from the keyboard can be stopped when the shutdown-code ^D (CTRL + D) is entered
+	//also put in ascii code for CTRL + Z
+	while ((c = getchar()) != 4 && c != 26 && c != EOF) 
+	{
+		if ((isspace(c) == 0) && (isspace(prev_char) || prev_char == 0)) 
+		{
+			count_words++;
+		}
+		if (c == 10 || c == 13 || prev_char == 0) 
+		{
+			count_newlines++;
+		}
+
+		count_chars++;
+		prev_char = c;
+	}
+
+	//Display output
+	printf("Amount of characters is: %d \n", count_chars);
+	printf("Amount of words is: %d \n", count_words);
+	printf("Amount of newlines is: %d \n", count_newlines);
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

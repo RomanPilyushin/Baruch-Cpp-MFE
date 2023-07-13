@@ -1,20 +1,47 @@
-// 1.7.1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.7.1.cpp
+//Basic C program that must exchange the value of two variables via a functin called Swap(). 
+//For example: if i=123 and j=456, then i=456 and j=123 after Swap has been called
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
+
+//Purpose is to exchange the value of the two variables, x and y
+//x and y are integers used for the exchange process
+//Nothing is returned, because the function does its work via pointers
+void Swap(int* x, int* y)
+{
+	//variables used for temporary storage purposes
+	int temp_x = 0, temp_y = 0;
+
+	//now exchange the values
+	temp_x = (int)(*y);
+	temp_y = (int)(*x);
+
+	//assign the exchanged values back to x and y via a pointer
+	(*x) = temp_x;
+	(*y) = temp_y;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//initialize variables passed into the Swap function
+	int x = 123;
+	int y = 456;
+
+	//print values of x and y prior to function call
+	printf("Value of x originally was %d.\n", x);
+	printf("Value of y originally was %d.\n", y);
+
+	//call function Swap, and pass in x and y via pointers
+	//function should switch the values of  the variables
+	Swap(&x, &y);
+
+	//show output of variables x and y
+	printf("Value of x after calling Swap() is now %d.\n", x);
+	printf("Value of y after calling Swap() is now %d.\n", y);
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

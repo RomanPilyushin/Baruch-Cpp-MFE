@@ -1,20 +1,49 @@
-// 1.7.2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.7.2.cpp
+//Basic C program that determines the length of the string.
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
+
+#define MAXLINE 30			//MAXLINE constant of 30
+
+//Purpose is to determines the length of the string
+//str is an array up to 30 chars + \0
+//returns length of the string
+int Length(char str[])
+{
+	int count = 0;  //variable used to keep track of length of string
+
+	//increment the counter until reaching '\0'
+	while (str[count] != '\0') 
+	{
+		count++;
+	}
+
+	return count;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	char string[MAXLINE + 1]; // Line of maximum 30 chars + \0
+	int c; // The input character
+	int i = 0; // The counter
+
+	// Print intro text
+	printf("Type up to %d chars. Exit with ^Z\n", MAXLINE);
+
+	// Get the characters
+	//exit upon Ctrl-z (often written as ^Z). 
+	while ((c = getchar()) != EOF && i < MAXLINE && c != 26)
+	{
+		// Append entered character to string
+		string[i++] = (char)c;
+	}
+	string[i] = '\0'; // String must be closed with \0
+
+	printf("String length is %d\n", Length(string));
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

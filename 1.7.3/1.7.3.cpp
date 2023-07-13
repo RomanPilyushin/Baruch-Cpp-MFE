@@ -1,20 +1,45 @@
-// 1.7.3.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.7.3.cpp
+//Instructed to predict what will be printed on the screen
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
+
+#define PRD(a) printf("%d", (a) ) // Print decimal
+#define NL printf("\n"); // Print new line
+
+// Create and initialize array
+int a[] = { 0, 1, 2, 3, 4 };
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int i;
+	int* p;
+
+	for (i = 0; i <= 4; i++) PRD(a[i]); // 0 1 2 3
+	NL;
+
+	for (p = &a[0]; p <= &a[4]; p++) PRD(*p); // 0 1 2 3 4
+	NL;
+	NL;
+
+	for (p = &a[0], i = 0; i <= 4; i++) PRD(p[i]); // 0 1 2 3 4
+	NL;
+
+	for (p = a, i = 0; p + i <= a + 4; p++, i++) PRD(*(p + i)); // 0 2 4
+	NL;
+	NL;
+
+	for (p = a + 4; p >= a; p--) PRD(*p); // 4 3 2 1 0
+	NL;
+
+	for (p = a + 4, i = 0; i <= 4; i++) PRD(p[-i]); // 4 3 2 1 0
+	NL;
+
+	for (p = a + 4; p >= a; p--) PRD(a[p - a]); // 4 3 2 1 0
+	NL;
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

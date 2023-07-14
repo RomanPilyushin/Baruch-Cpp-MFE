@@ -1,20 +1,32 @@
-// 1.8.1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.8.1.cpp
+//C-program that prints the contents of a struct called Article
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
+
+//Header file that contains definition for a struct called Article
+//Also contains function declaration for the function Print() 
+#include "Article.h"    
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	struct Article a = { 15, 25, "Test description" };  //contents of struct article initialized here
+	struct Article* pt_a = &a; //create a pointer to article variable
+
+	Print(pt_a); //call Print() function and pass in the pointer to article
+
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+//Purpose is to print the contents of article struct
+//Function gets the address of the structure as a parameter
+//Nothing returned from this function
+void Print(struct Article* pt_a)
+{
+	//Output contents of the article struct
+	printf("Article number is: %d\n", pt_a->Number);
+	printf("Article quantity is: %d\n", pt_a->Qty);
+	printf("Article description is: %s\n", pt_a->Description);
+}

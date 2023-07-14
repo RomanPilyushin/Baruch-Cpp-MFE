@@ -127,7 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="1.8 - Data Aggregates.cpp" />
+    <ClCompile Include="TestAggregates.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="OptionData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

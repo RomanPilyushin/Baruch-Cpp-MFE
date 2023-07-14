@@ -1,20 +1,26 @@
-// 1.9.1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.9.1.cpp
+//C-program that reads the characters from the keyboard and shows them on screen 
+//(the inputted characters should only be displayed when the user hits 'enter', line by line).
+//
 //
 
-#include <iostream>
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int c; // The input characters
+
+	// Print intro text
+	printf("Start typing random characters. Press enter to display. Exit with a period (.)\n");
+
+	//NOTE: having difficulty with ^A, so chose to use the period ascii character instead!!
+	while ((c = getchar()) != '.') 
+	{
+		putchar(c);  //output to screen whatever the user typed
+	}
+
+	printf("CTRL + A is a correct ending.\n");  //Now display this message following exit from while loop
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

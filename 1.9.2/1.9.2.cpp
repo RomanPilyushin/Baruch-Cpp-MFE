@@ -1,20 +1,35 @@
-// 1.9.2.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//Exercise1.9.2.cpp
+//C-program that reads the characters from the keyboard and is written to a file.
+//User provides name of the file
 //
 
-#include <iostream>
+//Need to use _CRT_SECURE_NO_WARNINGS to avoid compilation errors. Seems that scanf is now deprecated.
+#define _CRT_SECURE_NO_WARNINGS
+
+// Preprocessor for include files
+#include <stdio.h>			// C style I/O
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	FILE* fp;  //setup file variable
+	char filename[50] = "FileName.txt"; //Default name of file
+	int c = 0; //The input characters
+
+	printf("Input name of the file: "); 	//Print intro text and ask user to specify filename
+	scanf("%s", filename);
+
+	fp = fopen(filename, "w");  //now create a file
+
+	//Prompt user to start typing
+	printf("\nStart typing random characters. Press enter to display. Exit with a period (.)\n");
+
+	//NOTE: having difficulty with ^A, so chose to use the period ascii character instead!!
+	while ((c = getchar()) != '.') 
+	{
+		fputc(c, fp);  //write whatever user typed into the file
+	}
+	printf("CTRL + A is a correct ending.\n");  //Now display this message following exit from while loop
+
+	fclose(fp);  //Close the file
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

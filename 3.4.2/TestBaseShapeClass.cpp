@@ -7,12 +7,12 @@
 
 #include "Point.h"	//Header file that contains definition for object called Point
 #include "Circle.h"	//Header file that contains definition for object called Circle
-#include "Line.h"		//Header file that contains definition for object called Line
+#include "Line.h"	//Header file that contains definition for object called Line
 #include "Shape.h"	//Header file that contains definition for object called Shape
 
-using TestNameSpace::CAD::Point;  //Using declaration for using a single class (Point)
+using TestNameSpace::CAD::Point;   //Using declaration for using a single class (Point)
 using TestNameSpace::CAD::Circle;  //Using declaration for using a single class (Circle)
-using TestNameSpace::CAD::Line;  //Using declaration for using a single class (Line)
+using TestNameSpace::CAD::Line;   //Using declaration for using a single class (Line)
 using TestNameSpace::CAD::Shape;  //Using declaration for using a single class (Shape)
 
 #include <iostream>  // C++ style I/O

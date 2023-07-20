@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="3.5.cpp" />
+    <ClCompile Include="TestPayOff.cpp" />
+    <ClCompile Include="CallPayOff.cpp" />
+    <ClCompile Include="PayOff.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CallPayOff.h" />
+    <ClInclude Include="PayOff.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

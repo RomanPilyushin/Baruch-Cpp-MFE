@@ -127,7 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="4.2b.5.cpp" />
+    <ClCompile Include="OutOfBoundsException.cpp" />
+    <ClCompile Include="StackClassTest.cpp" />
+    <ClCompile Include="Array.cpp" />
+    <ClCompile Include="ArrayException.cpp" />
+    <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="StackEmptyException.cpp" />
+    <ClCompile Include="StackException.cpp" />
+    <ClCompile Include="StackFullException.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Array.h" />
+    <ClInclude Include="ArrayException.h" />
+    <ClInclude Include="OutOfBoundsException.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="StackEmptyException.h" />
+    <ClInclude Include="StackException.h" />
+    <ClInclude Include="StackFullException.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
